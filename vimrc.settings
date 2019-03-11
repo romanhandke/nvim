@@ -1,0 +1,62 @@
+"                                  SETTINGS
+"        Check :option-list or :options for a complete list of options
+"-------------------------------------------------------------------------------
+
+syntax enable
+set relativenumber	    " Relative line nbrs
+set number nu           " Line nbr on current line
+set tabstop=2	  	    " Tab equals x spaces
+set softtabstop=2       " Soft tab width
+set shiftwidth=2  	    " Indenting with '>'
+set expandtab	  	    " Pressing Tab
+set laststatus=2  	    
+set nohlsearch	  	    " Highlight search results"
+set incsearch     	    " incremental search
+set history=1000  	    " command history"
+set ruler         	    " show cursor position"
+set showcmd       	    " show incomplete commands"
+set noautoindent   	    " auto indentation after line break"
+set nosmartindent  	    " smart indent"
+set hidden         	    " all buffers are hidden"
+set splitright          " open split on the right
+set splitbelow          " open split on below
+set background=dark	
+set encoding=UTF-8
+set termguicolors
+
+" Theme Options
+colorscheme OceanicNext
+let g:airline_theme='oceanicnext'
+
+" Syntastic Settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" Syntastic for PHP
+let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
+"let g:syntastic_php_phpcs_exec = './bin/phpcs'
+let g:syntastic_php_phpcs_args = '--standard=psr2'
+"let g:syntastic_php_phpmd_exec = './bin/phpmd'
+let g:syntastic_php_phpmd_post_args = 'cleancode,codesize,controversial,design,unusedcode'
+
+" Set ctrlP Root to pwd
+let g:ctrlp_cmd='CtrlP :pwd'
+
+" Set ctrP to ignore certain directories
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+
+" ag Settings
+if executable('ag')
+    let g:ackprg = 'ag --vimgrep'
+endif
+
+" Save text folding
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview
+

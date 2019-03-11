@@ -1,0 +1,52 @@
+"                                  MAPPINGS 
+"-------------------------------------------------------------------------------
+
+" Leader Key
+let mapleader = "\<Space>"
+
+" Simplify vim split navigation
+nnoremap <a-j> <c-j>
+nnoremap <a-k> <c-k>
+nnoremap <a-h> <c-h>
+nnoremap <a-l> <c-l>
+
+" Emmet Keybindings
+let g:user_emmet_leader_key = '<c-e>'
+
+" Pastetoggle on F2
+set pastetoggle=<F2>
+
+" c-j c-k for moving in snippet
+let g:UltiSnipsExpandTrigger		= "<c-l>"
+let g:UltiSnipsJumpForwardTrigger	= "<c-j>"
+let g:UltiSnipsJumpBackwardTrigger	= "<c-k>"
+let g:UltiSnipsRemoveSelectModeMappings = 0
+
+" Use <TAB> to select the popup menu:
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+"set key to start NERDTree
+nnoremap <leader>nt :NERDTree<cr>
+
+" Insert Mode: ";;" appends ";" to end of line & exits Insert Mode
+inoremap ;; <Esc>A;<Esc>
+
+" Set key to insert php script tags
+nnoremap ,php a<?php ?><Esc>bbea<Space>
+
+" Set key to insert php echo shortcut
+nnoremap ,echo a<?= ?><Esc>bbea<Space>
+
+" Map <Esc> to exit terminal mode
+:tnoremap <Esc> <C-\><C-n>
+
+" Resize split windows
+nnoremap <silent> <up> :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <down> :exe "resize " . (winheight(0) * 2/3)<CR>
+nnoremap <silent> <right> :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
+nnoremap <silent> <left> :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
+
+" Map shift to esc
+au VimEnter * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+au VimLeave * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
