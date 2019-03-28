@@ -51,6 +51,12 @@ let g:ctrlp_cmd='CtrlP :pwd'
 " Set ctrP to ignore certain directories
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
+" Let UltiSnipsEdit split the window"
+let g:UltiSnipsEditSplit="vertical"
+
+" UltiSnips search path"
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips']
+
 " ag Settings
 if executable('ag')
     let g:ackprg = 'ag --vimgrep'
