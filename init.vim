@@ -30,4 +30,5 @@ call plug#end()
 source ~/.config/nvim/vimrc.ncm2
 source ~/.config/nvim/vimrc.settings
 source ~/.config/nvim/vimrc.mappings
-source ~/.config/nvim/vimrc.ft.sh
+source ~/.config/nvim/vimrc.sh.augs
+source ~/.config/nvim/vimrc.php.augs
