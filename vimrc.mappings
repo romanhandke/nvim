@@ -49,5 +49,5 @@ nnoremap <silent> <right> :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
 nnoremap <silent> <left> :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
 
 " Map shift to esc
-au VimEnter * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
-au VimLeave * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
+" au VimEnter * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+" au VimLeave * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
