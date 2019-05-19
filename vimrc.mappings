@@ -21,7 +21,7 @@ let g:UltiSnipsExpandTrigger		= "<c-l>"
 let g:UltiSnipsJumpForwardTrigger	= "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger	= "<c-k>"
 let g:UltiSnipsRemoveSelectModeMappings = 0
-let g:UltiSnipsListSnippets="<F5>"
+let g:UltiSnipsListSnippets="<c-h>"
 
 " Use <TAB> to select the popup menu:
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
@@ -48,6 +48,7 @@ nnoremap <silent> <down> :exe "resize " . (winheight(0) * 2/3)<CR>
 nnoremap <silent> <right> :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
 nnoremap <silent> <left> :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
 
+
 " Map shift to esc
-" au VimEnter * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
-" au VimLeave * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
+au VimEnter * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+au VimLeave * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'

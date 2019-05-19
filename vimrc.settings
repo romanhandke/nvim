@@ -5,10 +5,6 @@
 syntax enable
 set relativenumber	    " Relative line nbrs
 set number nu           " Line nbr on current line
-set tabstop=2	  	    " Tab equals x spaces
-set softtabstop=2       " Soft tab width
-set shiftwidth=2  	    " Indenting with '>'
-set expandtab	  	    " Pressing Tab
 set laststatus=2  	    
 set nohlsearch	  	    " Highlight search results"
 set incsearch     	    " incremental search
@@ -24,9 +20,24 @@ set background=dark
 set encoding=UTF-8
 set termguicolors
 
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
 " Theme Options
-colorscheme OceanicNext
+" colorscheme OceanicNext
+colorscheme snazzy
 let g:airline_theme='oceanicnext'
+
+" Tmuxline settings
+let g:tmuxline_preset = {
+      \'a'    : '#S',
+      \'b'    : '#W',
+      \'win'  : '#I #W',
+      \'cwin' : '#I #W',
+      \'x'    : '#(date +%a) #(date +%d.%B)',
+      \'y'    : '%R Uhr',
+      \'z'    : '#H'}
 
 " Syntastic Settings
 set statusline+=%#warningmsg#
@@ -40,10 +51,16 @@ let g:syntastic_check_on_wq = 0
 
 " Syntastic for PHP
 let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
-"let g:syntastic_php_phpcs_exec = './bin/phpcs'
+let g:syntastic_php_phpcs_exec = '/home/roman/.composer/vendor/squizlabs/php_codesniffer/bin/phpcs'
 let g:syntastic_php_phpcs_args = '--standard=psr2'
-"let g:syntastic_php_phpmd_exec = './bin/phpmd'
+let g:syntastic_php_phpmd_exec = '/home/roman/.composer/vendor/phpmd/phpmd/src/bin/phpmd'
 let g:syntastic_php_phpmd_post_args = 'cleancode,codesize,controversial,design,unusedcode'
+
+" PHP-cs-fixer Settings
+let g:php_cs_fixer_php_path = "php"               " Path to PHP
+let g:php_cs_fixer_enable_default_mapping = 1     " Enable the mapping by default (<leader>pcd)
+let g:php_cs_fixer_dry_run = 0                    " Call command with dry-run option
+let g:php_cs_fixer_verbose = 0                    " Return the output of command if 1, else an inline information.
 
 " Set ctrlP Root to pwd
 let g:ctrlp_cmd='CtrlP :pwd'
@@ -51,11 +68,10 @@ let g:ctrlp_cmd='CtrlP :pwd'
 " Set ctrP to ignore certain directories
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
-" Let UltiSnipsEdit split the window"
+" UltiSnips Settings
 let g:UltiSnipsEditSplit="vertical"
-
-" UltiSnips search path"
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips']
+let g:snips_author="roman handke"
 
 " ag Settings
 if executable('ag')

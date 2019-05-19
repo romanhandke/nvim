@@ -1,5 +1,0 @@
-" Auto insert header to newly created php files
-augroup php_header
-  autocmd BufNewFile *.php so $HOME/.config/nvim/snippets/php/php_header
-  autocmd BufNewFile *.php exe "g/date:.*/s//date: " .strftime("%d.%m.%Y")
-augroup END

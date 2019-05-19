@@ -4,7 +4,8 @@ Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-path'
 Plug 'roxma/nvim-yarp'
 Plug 'phpactor/phpactor' ,  {'do': 'composer install', 'for': 'php'}
-Plug 'phpactor/ncm2-phpactor'
+Plug 'phpactor/ncm2-phpactor', {'for': 'php'}
+Plug 'ncm2/ncm2-ultisnips'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-fugitive'
@@ -14,21 +15,26 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/emmet-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
+Plug 'edkolev/tmuxline.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-syntastic/syntastic'
 Plug 'StanAngeloff/php.vim'
+Plug 'stephpy/vim-php-cs-fixer'
+Plug 'Rican7/php-doc-modded'
 Plug 'mileszs/ack.vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'mhartington/oceanic-next'
+Plug 'connorholyday/vim-snazzy'
 Plug 'sheerun/vim-polyglot'
 Plug 'Yggdroot/indentLine'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'captbaritone/better-indent-support-for-php-with-html'
+Plug 'dsawardekar/wordpress.vim'
 call plug#end()
 
 source ~/.config/nvim/vimrc.ncm2
 source ~/.config/nvim/vimrc.settings
 source ~/.config/nvim/vimrc.mappings
-source ~/.config/nvim/vimrc.sh.augs
-source ~/.config/nvim/vimrc.php.augs
+source ~/.config/nvim/vimrc.sh.settings
+source ~/.config/nvim/vimrc.php.settings

@@ -1,5 +1,47 @@
 snippet pre "Insert <pre> tags for php debugging"
 echo "<pre>";
+${0:${VISUAL}}
 echo "</pre>";
+exit;
+endsnippet
+
+snippet br "Create line break"
+echo "<br />";
+endsnippet
+
+snippet dv "Create a documented variable"
+/**
+ * ${3:Description}
+ *
+ * @var ${4:string}
+ */
+${1:protected} $${2:varName};
+endsnippet
+
+snippet dm "Create a documented method"
+/**
+ * ${4:Description}
+ *
+ * @return ${5:void}
+ */
+${1:public} function ${2}(${3})
+{
+    ${6:# some code ...}	
+}
 endsnippet
 	
+snippet m "Create simple Method"
+${1:public} function ${2}(${3})
+{
+    ${0:# some code ...}
+}
+endsnippet
+
+snippet test "Create Test Class"
+use PHPUnit\Framework\TestCase;
+
+class ${1:TestName} extends TestCase
+{
+    ${0:# some code ...}
+}
+endsnippet
