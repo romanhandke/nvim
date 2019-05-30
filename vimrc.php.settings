@@ -6,9 +6,8 @@ augroup php_header
 augroup END
 
 " PHP Doc
-nnoremap <leader>h :call PhpDocSingle()<CR>
-
-nnoremap <leader>hh :call UpdatePhpDocIfExists()<CR>
+autocmd FileType php nnoremap <leader>h :call PhpDocSingle()<CR>
+autocmd FileType php nnoremap <leader>hh :call UpdatePhpDocIfExists()<CR>
 function! UpdatePhpDocIfExists()
     normal! k
     if getline('.') =~ '/'
@@ -22,3 +21,16 @@ function! UpdatePhpDocIfExists()
         exe "normal! $svoid"
     endif
 endfunction
+
+" PHP namespace plugin
+function! IPhpInsertUse()
+    call PhpInsertUse()
+    call feedkeys('a',  'n')
+endfunction
+autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
+
+" PHP tab settings
+autocmd FileType php set tabstop=4
+autocmd FileType php set shiftwidth=4
+autocmd FileType php set expandtab

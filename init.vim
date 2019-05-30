@@ -31,6 +31,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'captbaritone/better-indent-support-for-php-with-html'
 Plug 'dsawardekar/wordpress.vim'
+Plug 'arnaud-lb/vim-php-namespace'
 call plug#end()
 
 source ~/.config/nvim/vimrc.ncm2
