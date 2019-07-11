@@ -19,10 +19,11 @@ set splitbelow          " open split on below
 set background=dark	
 set encoding=UTF-8
 set termguicolors
-
 set tabstop=2
 set shiftwidth=2
 set expandtab
+set wildignore+=node_modules/**
+set wildignore+=vendor/**
 
 " Theme Options
 " colorscheme OceanicNext
@@ -78,6 +79,8 @@ if executable('ag')
     let g:ackprg = 'ag --vimgrep'
 endif
 
+"let g:gutentags_ctags_executable='ctags -R --exclude="node_modules" --exclude="vendor"'
+
 " xclip clipboard
 let g:clipboard = {
   \   'name': 'xclip-xfce4-clipman',
@@ -91,6 +94,15 @@ let g:clipboard = {
   \   },
   \   'cache_enabled': 1,
   \ }
+
+" xDebug Settings
+if !exists('g:vdebug_options')
+  let g:vdebug_options={}
+endif
+" let g:vdebug_options.path_maps = {"/var/www/html": '/home/roman/projects/test/public'}
+let g:vdebug_options.path_maps = {"/var/www/html": '/home/roman/projects/autovermietung/public'}
+let g:vdebug_options.server = ''
+" let g:vdebug_options.port = 9000
 
 " Save text folding
 autocmd BufWinLeave *.* mkview
