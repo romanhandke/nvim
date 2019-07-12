@@ -26,8 +26,6 @@ set wildignore+=node_modules/**
 set wildignore+=vendor/**
 
 " Theme Options
-" colorscheme OceanicNext
-" let g:airline_theme='oceanicnext'
 colorscheme snazzy
 let g:lightline = {
 \ 'colorscheme': 'snazzy',

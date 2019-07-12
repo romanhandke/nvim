@@ -11,7 +11,6 @@ Plug 'vim-syntastic/syntastic'
 Plug 'phpactor/phpactor' ,  {'do': 'composer install', 'for': 'php'}
 Plug 'phpactor/ncm2-phpactor', {'for': 'php'}
 Plug 'captbaritone/better-indent-support-for-php-with-html'
-Plug 'dsawardekar/wordpress.vim'
 Plug 'arnaud-lb/vim-php-namespace'
 Plug 'StanAngeloff/php.vim'
 Plug 'stephpy/vim-php-cs-fixer'
@@ -39,10 +38,8 @@ Plug 'christoomey/vim-tmux-navigator'
 
 " nVIM Design
 Plug 'connorholyday/vim-snazzy'
-" Plug 'vim-airline/vim-airline'
 Plug 'edkolev/tmuxline.vim'
 Plug 'ryanoasis/vim-devicons'
-Plug 'mhartington/oceanic-next'
 Plug 'itchyny/lightline.vim'
 
 " Debugging
