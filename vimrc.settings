@@ -27,18 +27,21 @@ set wildignore+=vendor/**
 
 " Theme Options
 " colorscheme OceanicNext
+" let g:airline_theme='oceanicnext'
 colorscheme snazzy
-let g:airline_theme='oceanicnext'
+let g:lightline = {
+\ 'colorscheme': 'snazzy',
+\ }
 
 " Tmuxline settings
-let g:tmuxline_preset = {
-      \'a'    : '#S',
-      \'b'    : '#W',
-      \'win'  : '#I #W',
-      \'cwin' : '#I #W',
-      \'x'    : '#(date +%a) #(date +%d.%B)',
-      \'y'    : '%R Uhr',
-      \'z'    : '#H'}
+ let g:tmuxline_preset = {
+       \'a'    : '#S',
+       \'b'    : '#W',
+       \'win'  : '#I #W',
+       \'cwin' : '#I #W',
+       \'x'    : '#(date +%a) #(date +%d.%B)',
+       \'y'    : '%R Uhr',
+       \'z'    : '#H'}
 
 " Syntastic Settings
 set statusline+=%#warningmsg#

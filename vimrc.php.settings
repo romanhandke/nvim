@@ -23,12 +23,12 @@ function! UpdatePhpDocIfExists()
 endfunction
 
 " PHP namespace plugin
-function! IPhpInsertUse()
-    call PhpInsertUse()
-    call feedkeys('a',  'n')
-endfunction
-autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
-autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
+" function! IPhpInsertUse()
+"     call PhpInsertUse()
+"     call feedkeys('a',  'n')
+" endfunction
+" autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
+" autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
 
 " PHP tab settings
 autocmd FileType php set tabstop=4

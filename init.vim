@@ -3,6 +3,7 @@ call plug#begin()
 Plug 'ncm2/ncm2'
 Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-path'
+Plug 'ncm2/ncm2-ultisnips'
 Plug 'roxma/nvim-yarp'
 Plug 'vim-syntastic/syntastic'
 
@@ -21,7 +22,6 @@ Plug 'ncm2/ncm2-tern', {'do':'npm install'}
 Plug 'posva/vim-vue'
 
 " General Utility
-Plug 'ncm2/ncm2-ultisnips'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-fugitive'
@@ -33,16 +33,17 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
-Plug 'connorholyday/vim-snazzy'
 Plug 'sheerun/vim-polyglot'
 Plug 'Yggdroot/indentLine'
 Plug 'christoomey/vim-tmux-navigator'
 
 " nVIM Design
-Plug 'vim-airline/vim-airline'
+Plug 'connorholyday/vim-snazzy'
+" Plug 'vim-airline/vim-airline'
 Plug 'edkolev/tmuxline.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'mhartington/oceanic-next'
+Plug 'itchyny/lightline.vim'
 
 " Debugging
 Plug 'vim-vdebug/vdebug'
