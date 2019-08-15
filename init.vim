@@ -8,7 +8,7 @@ Plug 'roxma/nvim-yarp'
 Plug 'vim-syntastic/syntastic'
 
 " PHP
-Plug 'phpactor/phpactor' ,  {'do': 'composer install', 'for': 'php'}
+Plug 'phpactor/phpactor' ,  {'do':'composer install','for':'php'}
 Plug 'phpactor/ncm2-phpactor', {'for': 'php'}
 Plug 'captbaritone/better-indent-support-for-php-with-html'
 Plug 'arnaud-lb/vim-php-namespace'
