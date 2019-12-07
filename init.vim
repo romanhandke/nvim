@@ -44,6 +44,10 @@ Plug 'itchyny/lightline.vim'
 
 " Debugging
 Plug 'vim-vdebug/vdebug'
+
+" Notes
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-notes'
 call plug#end()
 
 source ~/.config/nvim/vimrc.ncm2
@@ -51,3 +55,4 @@ source ~/.config/nvim/vimrc.settings
 source ~/.config/nvim/vimrc.mappings
 source ~/.config/nvim/vimrc.sh.settings
 source ~/.config/nvim/vimrc.php.settings
+source ~/.config/nvim/vimrc.notes
