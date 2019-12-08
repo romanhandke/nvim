@@ -50,10 +50,14 @@ Plug 'junegunn/fzf', {'dir':'~/.fzf','do':'./install --all'}
 Plug 'junegunn/fzf.vim'
 
 " nVIM Design
-Plug 'connorholyday/vim-snazzy'
-Plug 'edkolev/tmuxline.vim'
+" Plug 'connorholyday/vim-snazzy'
+" Plug 'edkolev/tmuxline.vim'
 Plug 'ryanoasis/vim-devicons'
-Plug 'itchyny/lightline.vim'
+" Plug 'itchyny/lightline.vim'
+Plug 'iCyMind/NeoSolarized'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+" Plug 'altercation/vim-colors-solarized'
 
 " Debugging
 Plug 'vim-vdebug/vdebug'
@@ -69,5 +73,4 @@ source ~/.config/nvim/config/vimrc.mappings
 source ~/.config/nvim/config/vimrc.sh.settings
 source ~/.config/nvim/config/vimrc.php.settings
 source ~/.config/nvim/config/vimrc.notes
-source ~/.config/nvim/config/vimrc.preview
 source ~/.config/nvim/config/vimrc.preview

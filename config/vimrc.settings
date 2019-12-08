@@ -41,20 +41,10 @@ endif
 "                                   DESIGN
 "-------------------------------------------------------------------------------
 " Theme Options
-colorscheme snazzy
-let g:lightline = {
-\ 'colorscheme': 'snazzy',
-\ }
-
-" Tmuxline settings
- let g:tmuxline_preset = {
-       \'a'    : '#S',
-       \'b'    : '#W',
-       \'win'  : '#I #W',
-       \'cwin' : '#I #W',
-       \'x'    : '#(date +%a) #(date +%d.%B)',
-       \'y'    : '%R Uhr',
-       \'z'    : '#H'}
+colorscheme NeoSolarized
+" let g:neosolarized_visibility = 'high'
+" let g:neosolarized_contrast = 'high'
+let g:airline_theme='solarized'
 
 "-------------------------------------------------------------------------------
 "                                 Gutentags

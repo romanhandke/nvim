@@ -88,12 +88,6 @@ nnoremap <silent><leader>pcd :call PhpCsFixerFixDirectory()<CR>
 nnoremap <silent><leader>pcf :call PhpCsFixerFixFile()<CR>
 
 "-------------------------------------------------------------------------------
-"                                    FZF
-"-------------------------------------------------------------------------------
-nnoremap <silent><leader>o :Files<CR>
-nnoremap <silent><leader>O :Files!<CR>
-
-"-------------------------------------------------------------------------------
 "                            Splits & Navigation
 "-------------------------------------------------------------------------------
 " Simplify vim split navigation
