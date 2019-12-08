@@ -1,3 +1,4 @@
+"-------------------------------------------------------------------------------
 "                                  SETTINGS
 "        Check :option-list or :options for a complete list of options
 "-------------------------------------------------------------------------------
@@ -25,6 +26,20 @@ set expandtab
 set wildignore+=node_modules/**
 set wildignore+=vendor/**
 
+" Set ctrlP Root to pwd
+let g:ctrlp_cmd='CtrlP :pwd'
+
+" Set ctrP to ignore certain directories
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+
+" ag Settings
+if executable('ag')
+    let g:ackprg = 'ag --vimgrep'
+endif
+
+"-------------------------------------------------------------------------------
+"                                   DESIGN
+"-------------------------------------------------------------------------------
 " Theme Options
 colorscheme snazzy
 let g:lightline = {
@@ -41,7 +56,22 @@ let g:lightline = {
        \'y'    : '%R Uhr',
        \'z'    : '#H'}
 
-" Syntastic Settings
+"-------------------------------------------------------------------------------
+"                                 Gutentags
+"-------------------------------------------------------------------------------
+let g:gutentags_generate_on_new = 1
+let g:gutentags_generate_on_missing = 1
+let g:gutentags_generate_on_write = 1
+let g:gutentags_generate_on_empty_buffer = 0
+let g:gutentags_ctags_extra_args = [
+      \ '--tag-relative=yes',
+      \ '--PHP-kinds=cfi',
+      \ ]
+set statusline+=%{gutentags#statusline()}
+
+"-------------------------------------------------------------------------------
+"                             Syntastic Settings
+"-------------------------------------------------------------------------------
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -51,38 +81,16 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" Syntastic for PHP
-let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
-let g:syntastic_php_phpcs_exec = '/home/roman/.composer/vendor/squizlabs/php_codesniffer/bin/phpcs'
-let g:syntastic_php_phpcs_args = '--standard=psr2'
-let g:syntastic_php_phpmd_exec = '/home/roman/.composer/vendor/phpmd/phpmd/src/bin/phpmd'
-let g:syntastic_php_phpmd_post_args = 'cleancode,codesize,controversial,design,unusedcode'
-
-" PHP-cs-fixer Settings
-let g:php_cs_fixer_php_path = "php"               " Path to PHP
-let g:php_cs_fixer_enable_default_mapping = 1     " Enable the mapping by default (<leader>pcd)
-let g:php_cs_fixer_dry_run = 0                    " Call command with dry-run option
-let g:php_cs_fixer_verbose = 0                    " Return the output of command if 1, else an inline information.
-
-" Set ctrlP Root to pwd
-let g:ctrlp_cmd='CtrlP :pwd'
-
-" Set ctrP to ignore certain directories
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
-
-" UltiSnips Settings
+"-------------------------------------------------------------------------------
+"                             UltiSnips Settings
+"-------------------------------------------------------------------------------
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips']
 let g:snips_author="roman handke"
 
-" ag Settings
-if executable('ag')
-    let g:ackprg = 'ag --vimgrep'
-endif
-
-"let g:gutentags_ctags_executable='ctags -R --exclude="node_modules" --exclude="vendor"'
-
-" xclip clipboard
+"-------------------------------------------------------------------------------
+"                              xclip clipboard
+"-------------------------------------------------------------------------------
 let g:clipboard = {
   \   'name': 'xclip-xfce4-clipman',
   \   'copy': {
@@ -96,16 +104,6 @@ let g:clipboard = {
   \   'cache_enabled': 1,
   \ }
 
-" xDebug Settings
-if !exists('g:vdebug_options')
-  let g:vdebug_options={}
-endif
-" let g:vdebug_options.path_maps = {"/var/www/html": '/home/roman/projects/test/public'}
-let g:vdebug_options.path_maps = {"/var/www/html": '/home/roman/projects/autovermietung/public'}
-let g:vdebug_options.server = ''
-" let g:vdebug_options.port = 9000
-
 " Save text folding
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
-

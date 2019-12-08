@@ -1,0 +1,62 @@
+"-------------------------------------------------------------------------------
+"                                PHP SETTINGS
+"-------------------------------------------------------------------------------
+
+" PHP tab settings
+autocmd FileType php set tabstop=4
+autocmd FileType php set shiftwidth=4
+autocmd FileType php set expandtab
+
+let g:phpactor_executable = '~/.config/composer/vendor/bin/phpactor'
+let g:php_namespace_sort_after_insert = 1
+
+"-------------------------------------------------------------------------------
+"                                  AUTOCMDs
+"-------------------------------------------------------------------------------
+" Header for new php files
+augroup php_header
+  autocmd BufNewFile *.php so $HOME/.config/nvim/snippets/php/php_header
+augroup END
+
+" NCM2 menu
+augroup ncm2
+  au!
+  autocmd BufEnter * call ncm2#enable_for_buffer()
+  au User Ncm2PopupOpen set completeopt=noinsert,menuone,noselect
+  au User Ncm2PopupClose set completeopt=menuone
+augroup END
+
+"-------------------------------------------------------------------------------
+"                             Syntastic for PHP
+"-------------------------------------------------------------------------------
+let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
+let g:syntastic_php_phpcs_exec = 'phpcs'
+let g:syntastic_php_phpcs_args = '--standard=psr2'
+let g:syntastic_php_phpmd_exec = 'phpmd'
+let g:syntastic_php_phpmd_post_args = 'cleancode,codesize,controversial,design,unusedcode'
+
+"-------------------------------------------------------------------------------
+"                          VIM php-cs-fixer Settings
+"-------------------------------------------------------------------------------
+let g:php_cs_fixer_php_path = "php"
+let g:php_cs_fixer_enable_default_mapping = 1
+let g:php_cs_fixer_dry_run = 0
+let g:php_cs_fixer_verbose = 0
+let g:php_cs_fixer_cache = '.php_cs.cache'
+let g:php_cs_fixer_config_file = '.php_cs.dist'
+autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
+
+"-------------------------------------------------------------------------------
+"                                 FUNCTIONS
+"-------------------------------------------------------------------------------
+
+"-------------------------------------------------------------------------------
+"                                   xDebug
+"-------------------------------------------------------------------------------
+if !exists('g:vdebug_options')
+  let g:vdebug_options={}
+endif
+let g:vdebug_options.path_maps = {"/var/www/html": '~/projects/'}
+let g:vdebug_options.server = ''
+let g:vdebug_options.port = 9000
+

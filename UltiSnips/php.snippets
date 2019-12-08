@@ -1,39 +1,14 @@
-snippet pre "Insert <pre> tags for php debugging"
-echo "<pre>";
-${0:${VISUAL}}
-echo "</pre>";
-exit;
-endsnippet
-
-snippet br "Create line break"
-echo "<br />";
-endsnippet
-
-snippet dv "Create a documented variable"
-/**
- * ${3:Description}
- *
- * @var ${4:string}
- */
-${1:protected} $${2:varName};
-endsnippet
-
-snippet dm "Create a documented method"
-/**
- * ${4:Description}
- *
- * @return ${5:void}
- */
-${1:public} function ${2}(${3})
+snippet pubf "Create public method"
+public function ${1:method name}(${2}): ${3:#return type}
 {
-    ${6:# some code ...}	
+    ${0:# some code}
 }
 endsnippet
-	
-snippet m "Create simple Method"
-${1:public} function ${2}(${3})
+
+snippet prof "Create protected method"
+protected function ${1:method name}(${2}): ${3:#return type}
 {
-    ${0:# some code ...}
+    ${0:# some code}
 }
 endsnippet
 
@@ -44,4 +19,12 @@ class ${1:TestName} extends TestCase
 {
     ${0:# some code ...}
 }
+endsnippet
+
+snippet dst "Declare strict types"
+declare(strict_types=1);
+endsnippet
+
+snippet vd "Create Vardump"
+echo "<pre>";var_dump(${0});die;
 endsnippet

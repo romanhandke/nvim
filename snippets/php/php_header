@@ -1,9 +1,3 @@
 :insert
 <?php
-
-/**
- * user: roman handke
- * date:     
- */
-
-
+declare(strict_types=1);
