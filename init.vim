@@ -53,7 +53,7 @@ Plug 'mhinz/vim-signify'
 " nVIM Design
 Plug 'edkolev/tmuxline.vim'
 Plug 'ryanoasis/vim-devicons'
-Plug 'iCyMind/NeoSolarized'
+Plug 'romanhandke/NeoSolarized'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
