@@ -26,10 +26,6 @@ Plug 'alvan/vim-php-manual', {'for':'php'}
 Plug 'adoy/vim-php-refactoring-toolbox', {'for':'php'}
 Plug 'Rican7/php-doc-modded', {'for':'php'}
 
-" JavaScript
-Plug 'ncm2/ncm2-tern', {'do':'npm install'}
-Plug 'posva/vim-vue'
-
 " General Utility
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
