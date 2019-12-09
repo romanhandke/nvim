@@ -48,16 +48,14 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'majutsushi/tagbar'
 Plug 'junegunn/fzf', {'dir':'~/.fzf','do':'./install --all'}
 Plug 'junegunn/fzf.vim'
+Plug 'mhinz/vim-signify'
 
 " nVIM Design
-" Plug 'connorholyday/vim-snazzy'
-" Plug 'edkolev/tmuxline.vim'
+Plug 'edkolev/tmuxline.vim'
 Plug 'ryanoasis/vim-devicons'
-" Plug 'itchyny/lightline.vim'
 Plug 'iCyMind/NeoSolarized'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" Plug 'altercation/vim-colors-solarized'
 
 " Debugging
 Plug 'vim-vdebug/vdebug'
