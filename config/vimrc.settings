@@ -1,4 +1,3 @@
-"-------------------------------------------------------------------------------
 "                                  SETTINGS
 "        Check :option-list or :options for a complete list of options
 "-------------------------------------------------------------------------------
@@ -37,19 +36,19 @@ if executable('ag')
     let g:ackprg = 'ag --vimgrep'
 endif
 
-"-------------------------------------------------------------------------------
 "                                   DESIGN
 "-------------------------------------------------------------------------------
 " Theme Options
-colorscheme NeoSolarized
+colorscheme default
+" colorscheme NeoSolarized
 " let g:neosolarized_visibility = 'high'
 " let g:neosolarized_contrast = 'high'
-let g:airline_theme='solarized'
+let g:airline_theme='papercolor'
 let g:airline#extensions#tmuxline#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+highlight SignColumn ctermbg=NONE cterm=NONE guibg=NONE gui=NONE
 
-"-------------------------------------------------------------------------------
 "                                 Gutentags
 "-------------------------------------------------------------------------------
 let g:gutentags_generate_on_new = 1
@@ -62,7 +61,6 @@ let g:gutentags_ctags_extra_args = [
       \ ]
 set statusline+=%{gutentags#statusline()}
 
-"-------------------------------------------------------------------------------
 "                             Syntastic Settings
 "-------------------------------------------------------------------------------
 set statusline+=%#warningmsg#
@@ -74,15 +72,13 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-"-------------------------------------------------------------------------------
 "                             UltiSnips Settings
 "-------------------------------------------------------------------------------
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips']
 let g:snips_author="roman handke"
 
-"-------------------------------------------------------------------------------
-"                              xclip clipboard
+"                              xclip clipboard 
 "-------------------------------------------------------------------------------
 let g:clipboard = {
   \   'name': 'xclip-xfce4-clipman',
