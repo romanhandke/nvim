@@ -25,17 +25,23 @@ set shiftwidth=2
 set expandtab
 set wildignore+=node_modules/**
 set wildignore+=vendor/**
+let g:python3_host_prog='/usr/bin/python3'
 
 " Set ctrlP Root to pwd
-let g:ctrlp_cmd='CtrlP :pwd'
+" let g:ctrlp_cmd='CtrlP :pwd'
 
 " Set ctrP to ignore certain directories
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 " ag Settings
-if executable('ag')
-    let g:ackprg = 'ag --vimgrep'
+if executable('ag') let g:ackprg = 'ag --vimgrep'
 endif
+
+let g:tsuquyomi_disable_quickfix = 1
+let g:syntastic_typescript_checkers = ['tsuquyomi']
+
+" Deactivate vim-jsx-pretty due to errors with TS
+let g:polyglot_disabled = ['jsx']
 
 "-------------------------------------------------------------------------------
 "                                   DESIGN
@@ -82,6 +88,16 @@ let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips']
 let g:snips_author="roman handke"
 
 "-------------------------------------------------------------------------------
+"                                  Ripgrep
+"-------------------------------------------------------------------------------
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --hidden --ignore-case --no-heading --color=always '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
+  \           : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%:hidden', '?'),
+  \   <bang>0)
+
+"-------------------------------------------------------------------------------
 "                              xclip clipboard
 "-------------------------------------------------------------------------------
 let g:clipboard = {
@@ -98,5 +114,5 @@ let g:clipboard = {
   \ }
 
 " Save text folding
-autocmd BufWinLeave *.* mkview
-autocmd BufWinEnter *.* silent loadview
+" autocmd BufWinLeave *.* mkview
+" autocmd BufWinEnter *.* silent loadview

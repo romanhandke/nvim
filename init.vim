@@ -26,6 +26,9 @@ Plug 'alvan/vim-php-manual', {'for':'php'}
 Plug 'adoy/vim-php-refactoring-toolbox', {'for':'php'}
 Plug 'Rican7/php-doc-modded', {'for':'php'}
 
+" Typescript
+Plug 'Quramy/tsuquyomi'
+
 " General Utility
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -42,7 +45,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'Yggdroot/indentLine'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'majutsushi/tagbar'
-Plug 'junegunn/fzf', {'dir':'~/.fzf','do':'./install --all'}
+Plug 'junegunn/fzf', {'do':{->fzf#install()}}
 Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-signify'
 
