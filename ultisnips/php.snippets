@@ -21,10 +21,24 @@ class ${1:TestName} extends TestCase
 }
 endsnippet
 
+snippet php "Create php opening tag" !b
+<?php
+
+$0
+endsnippet
+
 snippet dst "Declare strict types"
 declare(strict_types=1);
+
+$0
 endsnippet
 
 snippet vd "Create Vardump"
 echo "<pre>";var_dump(${0});die;
+endsnippet
+
+snippet ra "Require composer autoload" !b
+require __DIR__ . '/vendor/autoload.php';
+
+$0
 endsnippet
