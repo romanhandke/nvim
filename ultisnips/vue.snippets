@@ -1,0 +1,24 @@
+snippet tem "Create template tag"
+<template>
+	$0
+</template>
+endsnippet
+
+snippet scr "Create script tag"
+<script lang="ts">
+$0
+</script>
+endsnippet
+
+snippet sty "Create style tag"
+<style lang="scss">
+$0
+</style>
+endsnippet
+
+snippet comp "Create component"
+import { Component, Vue } from "vue-property-decorator";
+
+@Component
+export default class ${0:class name} extends Vue {}
+endsnippet

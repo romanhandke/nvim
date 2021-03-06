@@ -1,0 +1,70 @@
+{
+  "intelephense.licenceKey": "00II28CJTPWSYSM",
+  "diagnostic.errorSign": "✘",
+  "diagnostic.warningSign": "",
+  "diagnostic.infoSign": "",
+  "diagnostic-languageserver.filetypes": {
+    "vim": "vint",
+    "email": "languagetool",
+    "markdown": [ "write-good", "markdownlint" ],
+    "sh": "shellcheck",
+    "php": ["phpcs", "phpstan"],
+    "py": "pep8"
+  },
+  "diagnostic-languageserver.linters": {
+    "phpcs": {
+      "command": "./vendor/bin/phpcs",
+      "debounce": 100,
+      "rootPatterns": [ "composer.json", "composer.lock", "vendor", ".git" ],
+      "args": ["--report=emacs", "-s", "-" ],
+      "offsetLine": 0,
+      "offsetColumn": 0,
+      "sourceName": "phpcs",
+      "formatLines": 1,
+      "formatPattern": [
+        "^.*:(\\d+):(\\d+):\\s+(.*)\\s+-\\s+(.*)(\\r|\\n)*$",
+        {
+          "line": 1,
+          "column": 2,
+          "message": 4,
+          "security": 3
+        }
+      ],
+      "securities": {
+        "error": "error",
+        "warning": "warning"
+      }
+    },
+    "phpstan": {
+      "command": "./vendor/bin/phpstan",
+      "debounce": 100,
+      "rootPatterns": [ "composer.json", "composer.lock", "vendor", ".git" ],
+      "args": [ "analyze", "--error-format", "raw", "--no-progress", "%file" ],
+      "offsetLine": 0,
+      "offsetColumn": 0,
+      "sourceName": "phpstan",
+      "formatLines": 1,
+      "formatPattern": [
+        "^[^:]+:(\\d+):(.*)(\\r|\\n)*$",
+        {
+          "line": 1,
+          "message": 2
+        }
+      ]
+    }
+  },
+  "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "js", "ts", "vue", "py"],
+  "jedi.enable": false,
+  "jedi.startupMessage": true,
+  "jedi.markupKindPreferred": "plaintext",
+  "jedi.trace.server": true,
+  "jedi.jediSettings.autoImportModules": [],
+  "jedi.executable.command": "jedi-language-server",
+  "jedi.executable.args": [],
+  "jedi.completion.disableSnippets": false,
+  "jedi.diagnostics.enable": true,
+  "jedi.diagnostics.didOpen": true,
+  "jedi.diagnostics.didChange": true,
+  "jedi.diagnostics.didSave": true,
+  "jedi.workspace.extraPaths": []
+}
