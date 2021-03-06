@@ -27,6 +27,9 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 
+" python auto formatting
+Plug 'tell-k/vim-autopep8'
+
 " Debugging
 " Plug 'vim-vdebug/vdebug'
 

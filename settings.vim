@@ -33,7 +33,14 @@ inoremap ;; <Esc>A;<Esc>
 "}}}
 
 " PYTHON {{{
+" path to binary
 let g:python3_host_prog = '/usr/bin/python3'
+
+" auto formatting
+let g:autopep8_aggressive=2
+let g:autopep8_on_save = 1
+let g:autopep8_disable_show_diff=0
+" let g:autopep8_diff_type='vertical'
 "}}}
 
 " ULTISNIPS {{{
@@ -56,7 +63,7 @@ let $NVIM_SETTINGS = "$HOME/.config/nvim/settings.vim"
 let $QTILE = "$HOME/.config/qtile/config.py"
 let $QTILE_AUTOSTART = "$HOME/.config/qtile/autostart.sh"
 let $ALACRITTY = "$HOME/.config/alacritty/alacritty.yml"
-let $ZSHRC = "$HOME/.zshrc"
+let $ZSHRC = "$HOME/.config/zsh/.zshrc"
 " }}}
 
 " WINDOW MOVEMENT {{{
@@ -95,4 +102,16 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
+let g:coc_global_extensions = [
+      \ 'coc-tsserver',
+      \ 'coc-html',
+      \ 'coc-css',
+      \ 'coc-phpls',
+      \ 'coc-yaml',
+      \ 'coc-json',
+      \ 'coc-vimlsp',
+      \ 'coc-emmet',
+      \ 'coc-tag',
+      \ ]
 "}}}
